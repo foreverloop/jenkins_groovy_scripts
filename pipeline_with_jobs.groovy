@@ -9,11 +9,15 @@ pipeline {
 		}
 
 		stage('Make Tabs') {
-			build job: 'groovy_make_listview'
+			steps {
+				build job: 'groovy_make_listview'
+			}
 		}
 
 		stage('seed flask') {
-			build job: 'seed_flask'
+			steps {
+				build job: 'seed_flask'
+			}
 		}
 
 	}
